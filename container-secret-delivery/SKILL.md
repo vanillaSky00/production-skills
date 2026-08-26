@@ -75,14 +75,52 @@ before stating any duration).
 Default to **T1** unless Mode A selected otherwise. Full step-by-step, with rationale for
 every line, is in `references/t1-implementation.md`. Read it before writing config.
 
-Templates to copy and adapt:
+### Per-project parameters
 
-| File | Purpose |
-|---|---|
-| `assets/install-secret.sh` | Root-owned wrapper that lands the secret. Edit the `OWNER` map at the top. |
-| `assets/sudoers.d-deploy-secrets` | The single sudoers line that makes the wrapper safe |
-| `assets/workflow-deploy.yml` | GitHub Actions deploy job |
-| `assets/compose-fragment.yaml` | Service + top-level `secrets:` wiring |
+Everything project-specific lives in these seven values. Collect them first, then the rest
+is mechanical. Nothing else in the templates should need editing.
+
+| Parameter | Example | Where it goes |
+|---|---|---|
+| `<app>` | `myapp` | directory naming throughout |
+| Secret directory | `/etc/myapp/secrets` | `deploy-secrets.conf`, `deploy.env` |
+| Secret names | `db_password`, `api_token` | `deploy-secrets.conf`, workflow steps, compose |
+| Container UID:GID | `10001:10001` | `deploy-secrets.conf`, compose `user:` |
+| Compose file path | `/etc/myapp/compose.yaml` | workflow `env:` |
+| Service name | `app` | workflow `env:`, compose |
+| Health URL | `http://127.0.0.1:8080/health` | workflow `env:` (empty to skip) |
+
+Find the container UID with `docker compose exec <service> id` — it must be the UID the
+**container** runs as, not the runner's. Getting this wrong produces a `Permission denied`
+on `/run/secrets/...` that looks like a Docker bug.
+
+### Templates
+
+| File | Copy to | Edit? |
+|---|---|---|
+| `assets/install-secret.sh` | `/usr/local/sbin/install-secret` (root:root 0755) | **No** — generic, identical on every host |
+| `assets/deploy-secrets.conf` | `/etc/deploy-secrets.conf` (root:root 0644) | **Yes** — the only per-project file on the host |
+| `assets/sudoers.d-deploy-secrets` | `/etc/sudoers.d/deploy-secrets` (root:root 0440) | Runner account name only |
+| `assets/workflow-deploy.yml` | `.github/workflows/deploy.yml` | The `env:` block + one step per secret |
+| `assets/compose-fragment.yaml` | merge into the host compose file | Service name, image, env keys |
+
+The split matters: the **script** is generic and root-owned, the **config** is
+project-specific and root-owned, and the **workflow** is project-specific and
+repo-owned. Never invert this. If `install-secret` lives in the repo checkout, then
+sudoers is trusting a file the deploy account can rewrite, and the scoped grant becomes
+`NOPASSWD: ALL` with extra steps.
+
+### Onboarding a new project onto an existing host
+
+Steps 1 and 3 are one-time per host; the rest repeat per project.
+
+1. `install-secret` already at `/usr/local/sbin/` — reuse it, do not fork it
+2. Append the new project's entries to `/etc/deploy-secrets.conf`, with their own `dir`
+   column so each project gets its own `0700` directory
+3. sudoers already grants the wrapper — no change
+4. New compose file, new `deploy.env`, new workflow from the templates
+5. Create the GitHub environment and its deployment branch policy
+6. Audit before the first real deploy
 
 ### Non-negotiables
 
@@ -106,7 +144,7 @@ These are the ones that fail silently. Everything else is style.
 |---|---|
 | Official images (postgres, mysql, redis…) | `<VAR>_FILE=/run/secrets/x` — a convention those images implement, not a Docker feature |
 | Your own services | Read `/run/secrets/x` directly, or support the `_FILE` convention. **Add `_FILE` support to in-house services** — one-time cost, makes every deployment path uniform |
-| libpq consumers (psycopg, MLflow backend store) | `PGPASSFILE`. Postgres *silently ignores* a passfile with group/world access, so the mode matters more than usual |
+| libpq consumers (psycopg, SQLAlchemy, any Postgres client) | `PGPASSFILE`. Postgres *silently ignores* a passfile with group/world access, so the mode matters more than usual |
 | Third-party image with no file support | Entrypoint wrapper: read file → `export` → `exec` the real process. Second-best, but the value never leaves the container |
 
 ---
@@ -126,7 +164,7 @@ Add `--host` when running **on the deploy host itself** to also check file modes
 ownership, emptiness, and trailing newlines:
 
 ```bash
-python3 scripts/audit_deployment.py --compose compose.yaml --host --secret-dir /etc/ichin/secrets
+python3 scripts/audit_deployment.py --compose compose.yaml --host --secret-dir /etc/myapp/secrets
 ```
 
 Severities: `FAIL` = fix before next deploy. `WARN` = defect, schedule it. `INFO` =
@@ -216,7 +254,7 @@ Never `cat` a secret into the conversation or into CI logs. Compare lengths and 
 instead:
 
 ```bash
-docker compose exec <svc> sh -c 'sha256sum /run/secrets/x' ; sudo sha256sum /etc/ichin/secrets/x
+docker compose exec <svc> sh -c 'sha256sum /run/secrets/x' ; sudo sha256sum /etc/myapp/secrets/x
 ```
 
 ---

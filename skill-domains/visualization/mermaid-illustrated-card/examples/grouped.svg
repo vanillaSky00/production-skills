@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs><clipPath id="rounded"><rect x="7" y="7" width="1010" height="1010" rx="65"/></clipPath></defs>
+<g clip-path="url(#rounded)"><rect width="1024" height="1024" fill="#34EDBE"/>
+<circle cx="905" cy="85" r="66" fill="#0EA889" opacity="0.10"/>
+<circle cx="91" cy="142" r="37" fill="#FFFFFF" opacity="0.10"/>
+<rect x="57" y="205" width="910" height="771" rx="36" fill="#1FE2B5" stroke="#0EA889" stroke-width="3"/>
+<text x="512" y="110.6" font-family="Inter, Noto Sans, Arial, sans-serif" font-size="68" font-weight="800" text-anchor="middle" fill="#101919">Data Platform Overview</text>
+<circle cx="86" cy="228" r="3.5" fill="#0EA889" opacity="0.45"/>
+<circle cx="938" cy="228" r="3.5" fill="#0EA889" opacity="0.45"/>
+<circle cx="86" cy="955" r="3.5" fill="#0EA889" opacity="0.45"/>
+<circle cx="938" cy="955" r="3.5" fill="#0EA889" opacity="0.45"/>
+<rect x="362.9" y="220.0" width="298.2" height="305.4" rx="24" fill="#FFFFFF" fill-opacity="0.18" stroke="#0EA889" stroke-width="2.5" stroke-dasharray="9 6"/>
+<text x="381.9" y="250.0" fill="#172222" font-family="Inter, Noto Sans, sans-serif" font-weight="800" font-size="21">Data Ingestion</text>
+<rect x="362.9" y="497.5" width="298.2" height="319.7" rx="24" fill="#FFFFFF" fill-opacity="0.18" stroke="#0EA889" stroke-width="2.5" stroke-dasharray="9 6"/>
+<text x="381.9" y="527.5" fill="#172222" font-family="Inter, Noto Sans, sans-serif" font-weight="800" font-size="21">Analytics</text>
+<path d="M 512.00 354.77 C 512.00 370.39 512.00 388.12 512.00 404.29" fill="none" stroke="#172222" stroke-width="3.3" stroke-linecap="round"/>
+<path d="M512.0 404.3 L505.2 391.3 L518.8 391.3 Z" fill="#172222"/>
+<path d="M 512.00 500.63 C 512.00 516.24 512.00 533.97 512.00 550.14" fill="none" stroke="#172222" stroke-width="3.3" stroke-linecap="round"/>
+<path d="M512.0 550.1 L505.2 537.1 L518.8 537.1 Z" fill="#172222"/>
+<path d="M 501.32 646.48 C 500.35 662.09 500.22 679.83 500.94 695.99" fill="none" stroke="#172222" stroke-width="3.3" stroke-linecap="round"/>
+<path d="M500.9 696.0 L493.6 683.3 L507.2 682.7 Z" fill="#172222"/>
+<path d="M 638.11 747.74 C 698.11 747.74 698.11 601.89 638.11 601.89" fill="none" stroke="#172222" stroke-width="3.3" stroke-linecap="round"/>
+<path d="M638.1 601.9 L651.1 595.1 L651.1 608.7 Z" fill="#172222"/>
+<rect x="678.7" y="649.8" width="38.8" height="31" rx="10" fill="#FFFCED" stroke="#172222" stroke-width="1.5"/>
+<text x="698.1" y="670.8" text-anchor="middle" fill="#172222" font-family="Inter, Noto Sans, sans-serif" font-size="20" font-weight="700">No</text>
+<path d="M 512.00 792.33 C 512.00 807.93 512.00 825.68 512.00 841.84" fill="none" stroke="#172222" stroke-width="3.3" stroke-linecap="round"/>
+<path d="M512.0 841.8 L505.2 828.8 L518.8 828.8 Z" fill="#172222"/>
+<rect x="486.9" y="800.7" width="50.2" height="31" rx="10" fill="#FFFCED" stroke="#172222" stroke-width="1.5"/>
+<text x="512.0" y="821.7" text-anchor="middle" fill="#172222" font-family="Inter, Noto Sans, sans-serif" font-size="20" font-weight="700">Yes</text>
+<rect x="385.89" y="270.77" width="252.22" height="88.83" rx="16.9" fill="#000000" opacity="0.10"/>
+<rect x="385.89" y="265.77" width="252.22" height="88.83" rx="16.9" fill="#FFF19A" stroke="#172222" stroke-width="3"/>
+<circle cx="399.9" cy="269.8" r="18" fill="#FCFFF9" stroke="#172222" stroke-width="2"/>
+<g transform="translate(389.4 259.3) scale(0.8750)" stroke="#172222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="8" rx="2" fill="none"/><rect x="3" y="13" width="18" height="8" rx="2" fill="none"/><path d="M7 7h.01M7 17h.01M11 7h7M11 17h7" fill="none"/></g>
+<text x="512.00" y="318.89" font-family="Inter, Noto Sans, Arial, sans-serif" text-anchor="middle" fill="#172222" font-size="29" font-weight="750">API</text>
+<rect x="385.89" y="421.62" width="252.22" height="68.83" fill="#BFE7FF" stroke="#172222" stroke-width="3"/>
+<ellipse cx="512.00" cy="421.62" rx="126.11" ry="10" fill="#BFE7FF" stroke="#172222" stroke-width="3"/>
+<path d="M 385.89 490.45 a 126.11 10 0 0 0 252.22 0" fill="none" stroke="#172222" stroke-width="3"/>
+<circle cx="399.9" cy="415.6" r="18" fill="#FCFFF9" stroke="#172222" stroke-width="2"/>
+<g transform="translate(389.4 405.1) scale(0.8750)" stroke="#172222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" fill="none"/><path d="M8 8h8M8 12h8M8 16h5" fill="none"/></g>
+<text x="512.00" y="464.73" font-family="Inter, Noto Sans, Arial, sans-serif" text-anchor="middle" fill="#172222" font-size="29" font-weight="750">Raw Data</text>
+<rect x="385.89" y="562.48" width="252.22" height="88.83" rx="16.9" fill="#000000" opacity="0.10"/>
+<rect x="385.89" y="557.48" width="252.22" height="88.83" rx="16.9" fill="#FFD2DF" stroke="#172222" stroke-width="3"/>
+<circle cx="399.9" cy="561.5" r="18" fill="#FCFFF9" stroke="#172222" stroke-width="2"/>
+<g transform="translate(389.4 551.0) scale(0.8750)" stroke="#172222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" fill="none"/><path d="M8 8h8M8 12h8M8 16h5" fill="none"/></g>
+<text x="512.00" y="610.59" font-family="Inter, Noto Sans, Arial, sans-serif" text-anchor="middle" fill="#172222" font-size="29" font-weight="750">ETL</text>
+<polygon points="512.00,703.33 638.11,747.74 512.00,792.15 385.89,747.74" fill="#D2FBB8" stroke="#172222" stroke-width="3"/>
+<text x="512.00" y="739.62" font-family="Inter, Noto Sans, Arial, sans-serif" text-anchor="middle" fill="#172222" font-size="29" font-weight="750">Validated</text>
+<text x="512.00" y="773.26" font-family="Inter, Noto Sans, Arial, sans-serif" text-anchor="middle" fill="#172222" font-size="29" font-weight="750">?</text>
+<rect x="385.89" y="854.17" width="252.22" height="88.83" rx="16.9" fill="#000000" opacity="0.10"/>
+<rect x="385.89" y="849.17" width="252.22" height="88.83" rx="16.9" fill="#FFCAAA" stroke="#172222" stroke-width="3"/>
+<circle cx="399.9" cy="853.2" r="18" fill="#FCFFF9" stroke="#172222" stroke-width="2"/>
+<g transform="translate(389.4 842.7) scale(0.8750)" stroke="#172222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 17v-6M12 17V7M17 17V4" fill="none"/></g>
+<text x="512.00" y="902.29" font-family="Inter, Noto Sans, Arial, sans-serif" text-anchor="middle" fill="#172222" font-size="29" font-weight="750">Report</text>
+</g><rect x="7" y="7" width="1010" height="1010" rx="65" fill="none" stroke="#172222" stroke-width="5"/>
+</svg>

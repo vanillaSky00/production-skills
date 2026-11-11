@@ -1,0 +1,88 @@
+{
+  "source": "User-provided 2x4 reference collage; original 2048x1005 image.",
+  "note": "Style reference only; do not reproduce or treat these diagrams as Mermaid inputs.",
+  "crop_width": 468,
+  "crop_height": 468,
+  "cards": [
+    {
+      "file": "01-resume-review.png",
+      "topic": "resume review",
+      "rect": [
+        25,
+        0,
+        493,
+        468
+      ]
+    },
+    {
+      "file": "02-coding-patterns.png",
+      "topic": "coding patterns",
+      "rect": [
+        529,
+        0,
+        997,
+        468
+      ]
+    },
+    {
+      "file": "03-system-design.png",
+      "topic": "system design",
+      "rect": [
+        1033,
+        0,
+        1501,
+        468
+      ]
+    },
+    {
+      "file": "04-behavioral-interview.png",
+      "topic": "behavioral interview",
+      "rect": [
+        1537,
+        0,
+        2005,
+        468
+      ]
+    },
+    {
+      "file": "05-object-oriented-design.png",
+      "topic": "object oriented design",
+      "rect": [
+        25,
+        503,
+        493,
+        971
+      ]
+    },
+    {
+      "file": "06-machine-learning-system.png",
+      "topic": "machine learning system",
+      "rect": [
+        529,
+        503,
+        997,
+        971
+      ]
+    },
+    {
+      "file": "07-mobile-system-design.png",
+      "topic": "mobile system design",
+      "rect": [
+        1033,
+        503,
+        1501,
+        971
+      ]
+    },
+    {
+      "file": "08-generative-ai-system.png",
+      "topic": "generative ai system",
+      "rect": [
+        1537,
+        503,
+        2005,
+        971
+      ]
+    }
+  ]
+}

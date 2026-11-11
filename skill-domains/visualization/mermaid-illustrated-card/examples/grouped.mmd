@@ -1,0 +1,11 @@
+%% title: Data Platform Overview
+flowchart TB
+  subgraph Ingest[Data Ingestion]
+    A[API] --> B[(Raw Data)]
+  end
+  subgraph Analyze[Analytics]
+    C[ETL] --> D{Validated?}
+  end
+  B --> C
+  D -->|Yes| E[Report]
+  D -->|No| C

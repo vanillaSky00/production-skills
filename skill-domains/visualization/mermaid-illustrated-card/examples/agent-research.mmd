@@ -1,0 +1,10 @@
+%% title: Generative AI Research Flow
+flowchart TB
+    U[User Query] --> P[Research Planner]
+    P --> R[Retrieve Sources]
+    P --> W[Web Search]
+    R --> S[Synthesize Evidence]
+    W --> S
+    S --> C{Enough Evidence?}
+    C -->|No| P
+    C -->|Yes| A[Final Answer]

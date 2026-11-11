@@ -1,0 +1,79 @@
+{
+  "title": "Generative AI Research Flow",
+  "direction": "TB",
+  "theme": "lavender",
+  "nodes": [
+    {
+      "id": "U",
+      "label": "User Query",
+      "icon": "user"
+    },
+    {
+      "id": "P",
+      "label": "Research Planner",
+      "icon": "brain"
+    },
+    {
+      "id": "R",
+      "label": "Retrieve Sources",
+      "icon": "search"
+    },
+    {
+      "id": "W",
+      "label": "Web Search",
+      "icon": "search"
+    },
+    {
+      "id": "S",
+      "label": "Synthesize Evidence",
+      "icon": "layers"
+    },
+    {
+      "id": "C",
+      "label": "Enough Evidence?",
+      "icon": "check",
+      "shape": "diamond"
+    },
+    {
+      "id": "A",
+      "label": "Final Answer",
+      "icon": "send"
+    }
+  ],
+  "edges": [
+    {
+      "from": "U",
+      "to": "P"
+    },
+    {
+      "from": "P",
+      "to": "R"
+    },
+    {
+      "from": "P",
+      "to": "W"
+    },
+    {
+      "from": "R",
+      "to": "S"
+    },
+    {
+      "from": "W",
+      "to": "S"
+    },
+    {
+      "from": "S",
+      "to": "C"
+    },
+    {
+      "from": "C",
+      "to": "P",
+      "label": "No"
+    },
+    {
+      "from": "C",
+      "to": "A",
+      "label": "Yes"
+    }
+  ]
+}
